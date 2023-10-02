@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Livraria Online</title>
+</head>
+<body>
+    <header>
+        <h1>Livraria Online</h1>
+    </header>
+    
+    <main>
+        <div class="text">
+            <center><h1>Bem-vindo à Livraria Online</h1>
+            <p>Insira o valor total da sua compra:</p>
+            <input type="number" id="valorCompra" placeholder="Insira o valor em R$">
+            <button onclick="calcularDesconto()">Calcular Desconto</button>
+            <p>Desconto aplicado: <span id="desconto"></span></p></center>
+
+            <img src="livro1.jpg" alt="">
+
+        
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Livraria Online</p>
+    </footer>
+
+    <script>
+
+function calcularDesconto() {
+            const valorCompra = parseFloat(document.getElementById('valorCompra').value);
+
+            let desconto = 0;
+
+            if (valorCompra > 200) {
+                desconto = 0.2; // 20%
+            } else if (valorCompra > 100) {
+                desconto = 0.1; // 10%
+            }
+            else if(valorCompra<=100){
+                desconto=0.05;
+
+            }
+
+            const valorDesconto = valorCompra * desconto;
+            document.getElementById('desconto').textContent = `R$ ${valorDesconto.toFixed(2)}`;
+        }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const books = document.querySelectorAll('.book');
+
+    books.forEach(book => {
+        book.addEventListener('mouseenter', function() {
+            this.classList.add('hovered');
+        });
+
+        book.addEventListener('mouseleave', function() {
+            this.classList.remove('hovered');
+        });
+    });
+});
+
+        
+    </script>
+
+    <style>
+
+        img{
+            width: 1850px;
+            box-shadow: 10px,10px,10px,10px rgba(rgb(0, 3, 3));
+        }
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 3em 0;
+}
+
+main {
+    text-shadow: 20px,20px,20px  rgba(rgb(0, 3, 3)) ;
+    max-width: 8000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 3em 0;
+    background-color: #333;
+    color: #fff;
+}
+
+    </style>
+
+
+</body>
+</html>
