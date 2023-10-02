@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Livraria Mágica</title>
+</head>
+<body>
+    <header>
+        <h1>Livraria Mágica</h1>
+        <p>Explore mundos incríveis através dos livros!</p>
+    </header>
+    
+    <main>
+        <section class="books">
+            <!-- Livros vão aqui -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Livraria Mágica</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+    <style>
+        body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #4CAF50;
+    color: #fff;
+    text-align: center;
+    padding: 2em 0;
+}
+
+header h1 {
+    font-size: 3em;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.books {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.book {
+    width: 250px;
+    margin: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.book img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.book h2 {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+.book p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+.book:hover {
+    transform: scale(1.05);
+}
+
+
+
+    </style>
+    
+
+    <script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    const booksContainer = document.querySelector('.books');
+
+    for (let i = 1; i <= 6; i++) {
+        const book = document.createElement('div');
+        book.classList.add('book');
+        book.innerHTML = `
+            <img src="book${i}.jpg" alt="Book ${i}">
+            <h2>Book ${i}</h2>
+            <p>Author: Author ${i}</p>
+            <p>Price: $${i * 5}.99</p>
+        `;
+        booksContainer.appendChild(book);
+    }
+});
+
+
+
+    </script>
+</body>
+</html>
